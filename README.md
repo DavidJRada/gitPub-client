@@ -4,8 +4,6 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 David addition
 
 
-
-
 ## Available Scripts
 Jon edited thispspspssss
 In the project directory, you can run:

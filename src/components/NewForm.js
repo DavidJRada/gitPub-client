@@ -5,7 +5,7 @@ let baseURL = process.env.REACT_APP_BASEURL
 // alternate baseURL = 'https://fathomless-sierra-68956.herokuapp.com'
 
 if (process.env.NODE_ENV === 'development') {
-    baseURL = 'http://localhost:3004'
+    baseURL = 'https://gitpub-backend.herokuapp.com'
 } else {
     baseURL = 'https://gitpub-backend.herokuapp.com'
 }

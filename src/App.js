@@ -6,7 +6,7 @@ import Foods from './components/Foods'
 import Contact from './components/Contact'
 import About from './components/About'
 import Footer from './components/Footer'
-import './App.css';
+// import './App.css';
 
 
 // let baseURL = process.env.REACT_APP_BASEURL

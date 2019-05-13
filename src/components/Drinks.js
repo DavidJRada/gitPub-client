@@ -1,5 +1,6 @@
 import React from 'react'
 import NewForm from './NewForm'
+import UpdateForm from './UpdateForm'
 
 
 let baseURL = process.env.REACT_APP_BASEURL
@@ -18,11 +19,15 @@ class Drinks extends React.Component {
         super(props)
         this.state = {
             drinks: [],
+            drink: {},
+            edit: false
         }
         this.getDrinks = this.getDrinks.bind(this)
         this.handleAddDrink = this.handleAddDrink.bind(this)
         this.componentDidMount = this.componentDidMount.bind(this)
         this.deleteDrink = this.deleteDrink.bind(this)
+        this.toggleEdit = this.toggleEdit.bind(this)
+        this.currentDrink = this.currentDrink.bind(this)
 
     }
     componentDidMount() {
@@ -49,12 +54,21 @@ class Drinks extends React.Component {
             this.setState({ drinks: copyDrinks })
         })
     }
+    toggleEdit(edit) {
+       this.setState({edit: !edit})
+       console.log('It hit')
+    }
+    currentDrink(index) {
+        console.log(this.state.drinks[index])
+        this.setState({drink: this.state.drinks[index]})
+    }
     render() {
+        console.log(this.state.edit)
         return (
             <div className='drinks'>
                 <h1>Drinks</h1>
                 <p>Admin can only view NewForm</p>
-                <NewForm handleAddDrink={this.handleAddDrink} />
+                {this.state.edit ? <UpdateForm drink={this.state.drink}/> : <NewForm handleAddDrink={this.handleAddDrink} /> }
 
                 <table className='drinksDisplay'>
                     <tbody>
@@ -64,13 +78,17 @@ class Drinks extends React.Component {
                             <td>Ingredients</td>
                             <td>Price</td>
                         </tr>
-                        {this.state.drinks.map(drink => {
+                        {this.state.drinks.map((drink, index) => {
                             return (
-                                <tr key={drink._id} onClick={() => { this.deleteDrink(drink._id)}}>
+                                <tr key={drink._id} index={index} onClick= {() =>{this.currentDrink(index)}}>
+
                                     <td>{drink.name}</td>
                                     <td>{drink.image}</td>
                                     <td>{drink.ingredients}</td>
                                     <td>{drink.price}</td>
+
+                                    <td onClick={() => { this.deleteDrink(drink._id) }}>X</td>
+                                    <td onClick={() => { this.toggleEdit(this.state.edit) }} >Edit</td>
                                 </tr>
                             )
                         })}

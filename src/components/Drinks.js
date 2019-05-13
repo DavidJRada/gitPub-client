@@ -22,6 +22,7 @@ class Drinks extends React.Component {
         this.getDrinks = this.getDrinks.bind(this)
         this.handleAddDrink = this.handleAddDrink.bind(this)
         this.componentDidMount = this.componentDidMount.bind(this)
+        this.deleteDrink = this.deleteDrink.bind(this)
 
     }
     componentDidMount() {
@@ -40,13 +41,21 @@ class Drinks extends React.Component {
         }, err => console.log(err))
             .then(parsedData => { this.setState({ drinks: parsedData }) }, err => console.log(err))
     }
+    deleteDrink(id) {
+        fetch(baseURL + '/drinks/' + id, { method: 'DELETE' }).then(response => {
+            const findIndex = this.state.drinks.findIndex(drink => drink._id === id)
+            const copyDrinks = [...this.state.drinks]
+            copyDrinks.splice(findIndex, 1)
+            this.setState({ drinks: copyDrinks })
+        })
+    }
     render() {
         return (
             <div className='drinks'>
                 <h1>Drinks</h1>
                 <p>Admin can only view NewForm</p>
-                <NewForm handleAddDrink={this.handleAddDrink}/>
-                
+                <NewForm handleAddDrink={this.handleAddDrink} />
+
                 <table className='drinksDisplay'>
                     <tbody>
                         <tr>
@@ -57,7 +66,7 @@ class Drinks extends React.Component {
                         </tr>
                         {this.state.drinks.map(drink => {
                             return (
-                                <tr key={drink._id}>
+                                <tr key={drink._id} onClick={() => { this.deleteDrink(drink._id)}}>
                                     <td>{drink.name}</td>
                                     <td>{drink.image}</td>
                                     <td>{drink.ingredients}</td>

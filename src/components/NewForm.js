@@ -5,7 +5,7 @@ let baseURL = process.env.REACT_APP_BASEURL
 // alternate baseURL = 'https://fathomless-sierra-68956.herokuapp.com'
 
 if (process.env.NODE_ENV === 'development') {
-    baseURL = 'https://gitpub-backend.herokuapp.com'
+    baseURL = 'http://localhost:3004'
 } else {
     baseURL = 'https://gitpub-backend.herokuapp.com'
 }
@@ -14,11 +14,11 @@ console.log('current base URL:', baseURL)
 
 //alternate baseURL = 'https://fathomless-sierra-68956.herokuapp.com'
 
-if (process.env.NODE_ENV === 'development') {
-  baseURL = 'http://localhost:3004'
-} else {
-  baseURL = 'https://fathomless-sierra-68956.herokuapp.com'
-}
+// if (process.env.NODE_ENV === 'development') {
+//   baseURL = 'http://localhost:3004'
+// } else {
+//   baseURL = 'https://fathomless-sierra-68956.herokuapp.com'
+// }
 class NewForm extends React.Component {
     constructor(props) {
         super(props)

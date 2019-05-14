@@ -14,11 +14,11 @@ console.log('current base URL:', baseURL)
 
 //alternate baseURL = 'https://fathomless-sierra-68956.herokuapp.com'
 
-if (process.env.NODE_ENV === 'development') {
-    baseURL = 'http://localhost:3004'
-} else {
-    baseURL = 'https://fathomless-sierra-68956.herokuapp.com'
-}
+// if (process.env.NODE_ENV === 'development') {
+//     baseURL = 'http://localhost:3004'
+// } else {
+//     baseURL = 'https://fathomless-sierra-68956.herokuapp.com'
+// }
 class UpdateForm extends React.Component {
     constructor(props) {
         super(props)

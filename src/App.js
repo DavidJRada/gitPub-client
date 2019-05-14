@@ -7,6 +7,8 @@ import Contact from './components/Contact'
 import About from './components/About'
 import Footer from './components/Footer'
 import './css/App.css';
+import 'materialize-css'; // It installs the JS asset only
+import 'materialize-css/dist/css/materialize.min.css';
 
 
 // let baseURL = process.env.REACT_APP_BASEURL
@@ -49,11 +51,13 @@ class App extends React.Component {
           <h1>The GitPub</h1>
           <h2>Get Your Eat and Drink On With Some JSON</h2>
           <nav>
-            <Link to="/">Home</Link>
-            <Link to="/drinks">Drinks</Link>
-            <Link to="/foods">Food</Link>
-            <Link to="/contact">Contact</Link>
-            <Link to="/about">About</Link>
+            <div className='nav-wrapper'>
+                <Link to="/">Home</Link>
+                <Link to="/drinks">Drinks</Link>
+               <Link to="/foods">Food</Link>
+               <Link to="/contact">Contact</Link>
+               <Link to="/about">About</Link>
+            </div>
           </nav>
           <Route path='/' exact component={Home} />
           <Route path='/drinks' component={Drinks} />

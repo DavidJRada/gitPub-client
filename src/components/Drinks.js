@@ -27,6 +27,7 @@ class Drinks extends React.Component {
         this.componentDidMount = this.componentDidMount.bind(this)
         this.deleteDrink = this.deleteDrink.bind(this)
         this.toggleEdit = this.toggleEdit.bind(this)
+        this.handleEditDrink = this.handleEditDrink.bind(this)
         this.currentDrink = this.currentDrink.bind(this)
 
     }
@@ -40,6 +41,18 @@ class Drinks extends React.Component {
             drinks: copyDrinks,
         })
     }
+    handleEditDrink(resJSON) {
+        const copyEditDrinks = [...this.state.drinks]
+        console.log(copyEditDrinks)
+        // console.log(drink)
+        const findIndex = this.state.drinks.findIndex(drink => drink._id === resJSON._id)
+        copyEditDrinks[findIndex] = resJSON
+        this.setState({
+            drinks: copyEditDrinks
+        })
+        this.setState({edit: false} )
+    }
+
     getDrinks() {
         fetch(baseURL + '/drinks').then(data => {
             return data.json()
@@ -56,19 +69,20 @@ class Drinks extends React.Component {
     }
     toggleEdit(edit) {
        this.setState({edit: !edit})
-       console.log('It hit')
+    //    console.log('It hit')
     }
-    currentDrink(index) {
-        console.log(this.state.drinks[index])
-        this.setState({drink: this.state.drinks[index]})
-    }
+        currentDrink(index) {
+            // console.log(this.state.drinks[index])
+            this.setState({drink: this.state.drinks[index]})
+        }
+
     render() {
         console.log(this.state.edit)
         return (
             <div className='drinks'>
                 <h1>Drinks</h1>
                 <p>Admin can only view NewForm</p>
-                {this.state.edit ? <UpdateForm drink={this.state.drink}/> : <NewForm handleAddDrink={this.handleAddDrink} /> }
+                {this.state.edit ? <UpdateForm drink={this.state.drink} handleEditDrink={this.handleEditDrink}/> : <NewForm handleAddDrink={this.handleAddDrink} /> }
 
                 <table className='drinksDisplay'>
                     <tbody>

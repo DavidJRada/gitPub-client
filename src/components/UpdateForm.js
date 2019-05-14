@@ -23,10 +23,7 @@ class UpdateForm extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            name: '',
-            image: '',
-            ingredients: '',
-            price: 0
+
         }
         this.handleChange = this.handleChange.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
@@ -34,6 +31,7 @@ class UpdateForm extends React.Component {
     }
     handleChange(event) {
         this.setState({ [event.currentTarget.id]: event.currentTarget.value })
+        console.log(event.currentTarget.value)
     }
 
     handleSubmit(event) {
@@ -58,18 +56,18 @@ class UpdateForm extends React.Component {
         return (
             <form onSubmit={this.handleSubmit}>
                 <label htmlFor="name">Name: </label>
-                <input type="text" id="name" name="name" onChange={this.handleChange} placeholder={this.props.drink.name} />
+                <input type="text" id="name" name="name" onChange={this.handleChange} defaultValue={this.props.drink.name} />
 
                 <label htmlFor="image">Image: </label>
-                <input type="text" id="image" name="image" onChange={this.handleChange} placeholder={this.props.drink.image} />
+                <input type="text" id="image" name="image" onChange={this.handleChange} defaultValue={this.props.drink.image} />
 
 
                 <label htmlFor="ingredients">Ingredients: </label>
-                <textarea type="text" id="ingredients" name="ingredients" onChange={this.handleChange} placeholder={this.props.drink.ingredients} />
+                <textarea type="text" id="ingredients" name="ingredients" onChange={this.handleChange} defaultValue={this.props.drink.ingredients} />
 
 
                 <label htmlFor="price">Price: </label>
-                <input type="number" id="price" name="price" onChange={this.handleChange} placeholder={this.props.drink.price} />
+                <input type="number" id="price" name="price" onChange={this.handleChange} defaultValue={this.props.drink.price} />
 
                 <input type="submit" value="Make Change" />
             </form>

@@ -7,6 +7,7 @@ import Contact from './components/Contact'
 import About from './components/About'
 import Footer from './components/Footer'
 import Cart from './components/Cart'
+import Login from './components/login/Login'
 import './css/App.css';
 import 'materialize-css'; // It installs the JS asset only
 import 'materialize-css/dist/css/materialize.min.css';
@@ -26,21 +27,18 @@ class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      cart: ["hello"]
+      cart: ["hello"],
+      username: '',
+      isLoggedIn: false
     }
-  //   this.getDrinks = this.getDrinks.bind(this)
-  //   // this.handleAddDrink = this.handleAddDrink.bind(this)
-  // }
-  // componentDidMount() {
-  //   this.getDrinks()
-  // }
-  // getDrinks() {
-  //   fetch(baseURL + '/drinks').then(data => {
-  //     return data.json()
-  //   }, err => console.log(err))
-  //     .then(parsedData => { this.setState({ drinks: parsedData }) }, err => console.log(err))
+    this.toggleLogIn = this.toggleLogIn.bind(this)
   }
+  toggleLogIn(username) {
+    // console.log(this.state.isLoggedIn)
+    this.setState({ isLoggedIn: !this.state.isLoggedIn, username: username })
+    console.log(this.state.isLoggedIn, username)
 
+  }
 
   render() {
     return (
@@ -48,6 +46,8 @@ class App extends React.Component {
         <div className="container">
           <h1>The GitPub</h1>
           <h2>Get Your Eat and Drink On With Some JSON</h2>
+          {this.state.isLoggedIn ? <h2>Welcome {this.state.username}</h2>
+            : <Login toggleLogIn={this.toggleLogIn} />}
           <nav>
             <div className='nav-wrapper'>
                 <Link to="/">Home</Link>
@@ -56,6 +56,8 @@ class App extends React.Component {
                <Link to="/contact">Contact</Link>
                <Link to="/about">About</Link>
                <Link to="/cart">Cart</Link>
+              <Link>{this.state.isLoggedIn ? <button onClick={this.toggleLogIn}>Log Out</button>
+                : null}</Link>
             </div>
           </nav>
           <Route path='/' exact component={Home} />

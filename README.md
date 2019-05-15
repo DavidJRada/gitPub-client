@@ -1,74 +1,31 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Title: GitPub <br>
+Live Link: https://gitpub-client.herokuapp.com/
+Type: Project-3, Group Project<br>
+Creators: David Rada, Jon Weinstein, Sebastian D'Arena
+Competencies: Trello, REACT, Materialize, REACT-materialize, npm,
+Mongodb, Mongoose, User auth, CRUD, 2 models (food, drinks)<br>
+Prerequisites: Knowledge of alcoholic beverages, coding terminoligy,
+and a variety of food items. Also, basic HTML and css.
+
+---
+# Project-3
+
+## Wins
+Accomplished MVP goals of CRUD<br>
+Set up REACT using CRA (create-react-app)<br>
+Established separate backend and front-end servers<br>
+App hosted live on Heroku (see link above) <br>
+Admin authentication for inventory mgmt<br>
+
+<p>Overall we were able to work well as a group because we made sure to stay in constant communication about what stage we were in, using tools like slack, github and trello as well as person to person.<p>
+
+## Struggles
+<p>We struggled with getting our app live on Heroku but in the end prevailed with help from the 'Heroku Whisperer'. We also had our fair share of struggles with github--pushing, pulling, and merge conflicts, but were able to work through those with help from Donovan.<p>
+  
+## Things we would like to accomplish in the future
+Adding a cart so customers could order online<br>
+User authentication so customers could have their own account w/ favorites<br>
+Make better use of User Stories in Trello.
 
 
-David addition
 
-
-## Available Scripts
-Jon edited thispspspssss
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
-
-Test text

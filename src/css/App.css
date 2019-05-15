@@ -1,47 +1,64 @@
- * {
-    text-align: center;
-  }
+* {
+  text-align: center;
+}
 
-  
-  /* div {
-    border: 1px solid black;
-    margin: 20px;
-  } */
-   
-  /* a {
-    padding: 30px;
-  } */
-  
-  /* label {
-    margin: 10px;
-  } */
-  
-  .drinksDisplay {
-    margin-top: 20px;
-    display: flex;
-  }
+.drinksDisplay {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
 
-  .card {
-    border: 3px solid gold;
-  }
+body {
+  background-image: url('https://i.imgur.com/fheeOpc.jpg');
+  font-family: "courier"
+}
 
-  .nav-wrapper {
-    display: flex;
-    font-size: 15px;
-    justify-content: space-between;
-    margin: 0px 20px;
-  }
- 
+.drinksDisplay {
+  margin-top: 20px;
+  display: flex;
+}
+
+.card {
+  border: 3px solid black;
+}
+.nav-wrapper {
+  display: flex;
+  font-size: 30px;
+  justify-content: space-evenly;
+  color: black;
+  border: 0px;
+  font-family: "courier"
+}
+
+.navLinking {
+  display: inline;
+}
+
+nav {
+  background-color: transparent;
+  color: black;
+}
+
 .login {
   display: flex;
-  margin-top: 50px;
-  justify-content: center;
-  border: 1px solid black;
+  font-size: 15px;
+  justify-content: space-between;
+  margin: 0px 20px;
 }
-  .card-title {
-    border: .5px solid black;
-  }
 
- 
-  
-  
+form {
+  border: 3px solid black;
+  text-align: left;
+  background: lightgray;
+  opacity: 0.6;
+}
+
+input {
+  border-bottom: 5px solid black;
+}
+
+label {
+  font-size: 30px;
+  color: black;
+}
+

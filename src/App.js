@@ -32,46 +32,35 @@ class App extends React.Component {
     }
     this.toggleLogIn = this.toggleLogIn.bind(this)
   }
-  toggleLogIn(username) {
-    console.log(this.state.isLoggedIn)
+  toggleLogIn() {
+    // console.log(this.state.isLoggedIn)
     this.setState({ isLoggedIn: !this.state.isLoggedIn })
-    if (localStorage.isLoggedIn) {
-      localStorage.setItem('isLoggedIn', 'false')
-    } else {
-      localStorage.setItem('isLoggedIn', 'true')
     }
-    if (username === 'Admin') {
-      localStorage.setItem('isAdmin', 'true')
-    } else {
-      localStorage.setItem('isAdmin', 'false')
-    }
-  }
 
   render() {
     return (
       <Router>
         <div className="container">
-          <h1>The GitPub</h1>
-          <h2>Get Your Eat and Drink On With Some JSON</h2>
-          {localStorage.isLoggedIn ? <h2>Welcome Admin!</h2>
-            : null}
+          {this.state.isLoggedIn ? <h1>GitPub - Welcome Admin!</h1>
+            : "GitPub"}
           <nav>
-            <div className='nav-wrapper'>
+            <div className='nav-wrapper black text-darken-2'>
               <Link to="/">Home</Link>
               <Link to="/drinks">Drinks</Link>
               <Link to="/foods">Food</Link>
               <Link to="/contact">Contact</Link>
               <Link to="/about">About</Link>
-              {localStorage.isLoggedIn ? null : <Link to="/login">Log In</Link>}
+              {this.state.isLoggedIn ? null : <Link to="/login">Log In</Link>}
               {this.state.isLoggedIn ? <Link to='/' onClick={this.toggleLogIn}>Log Out</Link>
                 : null}
 
             </div>
           </nav>
+          <h3>Get Your Eat and Drink On With Some JSON</h3>
           <Route path='/' exact component={Home} />
-          <Route path='/drinks' render={() => <Drinks username={this.state.username} />} />
+          <Route path='/drinks' render={() => <Drinks isLoggedIn={this.state.isLoggedIn} />} />
 
-          <Route path='/foods' component={Foods} />
+          <Route path='/foods' render={() => <Foods isLoggedIn={this.state.isLoggedIn} />} />
           <Route path='/contact' component={Contact} />
           <Route path='/about' component={About} />
           <Route path="/login" render={() => <Login toggleLogIn={this.toggleLogIn} />} />

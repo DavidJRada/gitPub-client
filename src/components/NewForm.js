@@ -61,7 +61,7 @@ class NewForm extends React.Component {
     }
     render() {
         return (
-            <form onSubmit={this.handleSubmit}>
+            <form className = 'newForm' onSubmit={this.handleSubmit}>
                 <label htmlFor="name">Name: </label>
                 <input type="text" id="name" name="name" onChange={this.handleChange} value={this.state.name}  />
 

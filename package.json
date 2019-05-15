@@ -3,12 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-<<<<<<< HEAD
-    "materialize-css": "^1.0.0-rc.2",
-    "mongoose": "^5.5.8",
-=======
     "materialize-css": "^1.0.0",
->>>>>>> faf166c4f934f1e7ffddb557fe2308882dc2d0f6
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-materialize": "^3.3.0",

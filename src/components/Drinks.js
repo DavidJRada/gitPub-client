@@ -49,7 +49,7 @@ class Drinks extends React.Component {
         this.setState({
             drinks: copyEditDrinks
         })
-        this.setState({edit: false} )
+        this.setState({ edit: false })
     }
 
     getDrinks() {
@@ -67,21 +67,20 @@ class Drinks extends React.Component {
         })
     }
     toggleEdit(edit) {
-       this.setState({edit: !edit})
-    //    console.log('It hit')
+        this.setState({ edit: !edit })
+        //    console.log('It hit')
     }
-        currentDrink(index) {
-            // console.log(this.state.drinks[index])
-            this.setState({drink: this.state.drinks[index]})
-        }
+    currentDrink(index) {
+        // console.log(this.state.drinks[index])
+        this.setState({ drink: this.state.drinks[index] })
+    }
 
     render() {
-        console.log(this.state.edit)
         return (
             <div className='drinks'>
                 <h1>Drinks</h1>
                 <p>Admin can only view NewForm</p>
-                {this.state.edit ? <UpdateForm drink={this.state.drink} handleEditDrink={this.handleEditDrink}/> : <NewForm handleAddDrink={this.handleAddDrink} /> }
+                {this.state.edit ? <UpdateForm drink={this.state.drink} handleEditDrink={this.handleEditDrink} /> : <NewForm handleAddDrink={this.handleAddDrink} />}
 
                 <table className='drinksDisplay'>
                     <tbody>
@@ -93,7 +92,7 @@ class Drinks extends React.Component {
                         </tr>
                         {this.state.drinks.map((drink, index) => {
                             return (
-                                <tr key={drink._id} index={index} onClick= {() =>{this.currentDrink(index)}}>
+                                <tr key={drink._id} index={index} onClick={() => { this.currentDrink(index) }}>
 
                                     <td>{drink.name}</td>
                                     <td>{drink.image}</td>

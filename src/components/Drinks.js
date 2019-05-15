@@ -97,9 +97,6 @@ class Drinks extends React.Component {
                 <p>Admin can only view NewForm</p>
                 {this.state.edit ? <UpdateForm drink={this.state.drink} handleEditDrink={this.handleEditDrink} /> : <NewForm handleAddDrink={this.handleAddDrink} />}
 <div class = "row">
-        
-       
- 
 
                 {this.state.drinks.map((drink, index) => {
                     return (
@@ -107,16 +104,25 @@ class Drinks extends React.Component {
                         <div className='card' key={drink._id} index={index} onClick={() => { this.currentDrink(index) }}>
 
                             <div className='card-title'>{drink.name}</div>
-                            <div className='card-image'>
-                                <img src={drink.image}></img>
+                            <div className='card-image waves-effect waves-block waves-light'>
+                                <img class="activator" src={drink.image}></img>
                             </div>
-                            <div className='card-content'><p>{drink.ingredients}<br/><br/>
-                            ${drink.price}</p></div>
+
+                            <p>${drink.price}</p>
+                            <div class = "left">
                             <div className = 'card-action' onClick={() => { this.deleteDrink(drink._id) }}>Delete</div>
+                            </div>
+                            <div class = "right">
                             <div className = 'card-action' onClick={() => { this.toggleEdit(this.state.edit) }} > Edit</div>
+                            </div>
         {/* can't display an array so we need another .map()... maybe if it an array- not if it's a string*/}
-                        </div> 
-                        </div>     
+    <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4">{drink.name}<i class="material-icons right">X</i></span>
+      <p>Ingredients: {drink.ingredients}</p>
+      <p>Price: ${drink.price}</p>
+    </div>
+    </div> 
+</div>     
                             )
                         })}
                 </div>

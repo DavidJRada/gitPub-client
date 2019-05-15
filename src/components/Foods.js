@@ -77,36 +77,32 @@ class Foods extends React.Component {
     }
 
     render() {
-        console.log(this.state.edit)
         return (
             <div className='foods'>
                 <h1>Foods</h1>
                 {
-                    this.props.isLoggedIn && (this.state.edit ? <UpdateFoodForm drink={this.state.drink} handleEditDrink={this.handleEditDrink} /> : <NewFoodForm handleAddDrink={this.handleAddDrink} />) 
+                    this.props.isLoggedIn && (this.state.edit ? <UpdateFoodForm drink={this.state.drink} handleEditDrink={this.handleEditDrink} /> : <NewFoodForm handleAddDrink={this.handleAddDrink} />)
                 }
-
-                <div class="row">
+                <div className="row">
                     {this.state.foods.map((food, index) => {
                         return (
-                            <div class="col s4 m4">
+                            <div className="col s4 m4">
                                 <div className='card' key={food._id} index={index} onClick={() => { this.currentFood(index) }}>
 
                                     <div className='card-title'>{food.name}</div>
                                     <div className='card-image waves-effect waves-block waves-light'>
-                                        <img class="activator" src={food.image}></img>
+                                        <img className="activator" src={food.image}></img>
                                     </div>
 
                                     <p>${food.price}</p>
-                                    <div class="left">
+                                    <div className="left">
                                         <div className='card-action' onClick={() => { this.deleteFood(food._id) }}>Delete</div>
                                     </div>
-                                    <div class="right">
+                                    <div className="right">
                                         <div className='card-action' onClick={() => { this.toggleEdit(this.state.edit) }} > Edit</div>
                                     </div>
-                                    {/* can't display an array so we need another .map()... maybe if it an array- not if it's a string*/}
-
-                                    <div class="card-reveal">
-                                        <span class="card-title grey-text text-darken-4">{food.name}<i class="material-icons right">X</i></span>
+                                    <div className="card-reveal">
+                                        <span className="card-title grey-text text-darken-4">{food.name}<i className="material-icons right">X</i></span>
                                         <p>Ingredients: {food.ingredients}</p>
                                         <p>Price: ${food.price}</p>
                                     </div>
@@ -115,12 +111,10 @@ class Foods extends React.Component {
                         )
                     })}
                 </div>
-
             </div>
+
         )
     }
 }
-
-
 
 export default Foods

@@ -36,22 +36,15 @@ class App extends React.Component {
     // console.log(this.state.isLoggedIn)
     this.setState({ isLoggedIn: !this.state.isLoggedIn })
     }
-  //   if (localStorage.isLoggedIn) {
-  //     localStorage.setItem('isLoggedIn', 'false')
-  //   } else {
-  //     localStorage.setItem('isLoggedIn', 'true')
-  //   }
-  // }
+
   render() {
     return (
       <Router>
         <div className="container">
-          <h1>The GitPub</h1>
-          <h2>Get Your Eat and Drink On With Some JSON</h2>
-          {this.state.isLoggedIn ? <h2>Welcome Admin!</h2>
-            : null}
+          {this.state.isLoggedIn ? <h1>GitPub - Welcome Admin!</h1>
+            : "GitPub"}
           <nav>
-            <div className='nav-wrapper'>
+            <div className='nav-wrapper black text-darken-2'>
               <Link to="/">Home</Link>
               <Link to="/drinks">Drinks</Link>
               <Link to="/foods">Food</Link>
@@ -63,6 +56,7 @@ class App extends React.Component {
 
             </div>
           </nav>
+          <h3>Get Your Eat and Drink On With Some JSON</h3>
           <Route path='/' exact component={Home} />
           <Route path='/drinks' render={() => <Drinks isLoggedIn={this.state.isLoggedIn} />} />
 

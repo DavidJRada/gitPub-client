@@ -8,36 +8,57 @@
   justify-content: space-between;
 }
 
+body {
+  background-image: url('https://i.imgur.com/fheeOpc.jpg');
+  font-family: "courier"
+}
+
+.drinksDisplay {
+  margin-top: 20px;
+  display: flex;
+}
+
 .card {
-  width: 200px;
-  height: 300px;
-  border: 3px solid gold;
-  position: relative;
+  border: 3px solid black;
 }
-
-.card img {
-  padding: 1px;
-  height: 70%;
-
-}
-.card-action {
-  position: absolute;
-  bottom: 0;
-}
-
 .nav-wrapper {
+  display: flex;
+  font-size: 30px;
+  justify-content: space-evenly;
+  color: black;
+  border: 0px;
+  font-family: "courier"
+}
+
+.navLinking {
+  display: inline;
+}
+
+nav {
+  background-color: transparent;
+  color: black;
+}
+
+.login {
   display: flex;
   font-size: 15px;
   justify-content: space-between;
   margin: 0px 20px;
 }
 
-.login {
-display: flex;
-margin-top: 50px;
-justify-content: center;
-border: 1px solid black;
+form {
+  border: 3px solid black;
+  text-align: left;
+  background: lightgray;
+  opacity: 0.6;
 }
-.card-title {
-  border: .5px solid black;
+
+input {
+  border-bottom: 5px solid black;
 }
+
+label {
+  font-size: 30px;
+  color: black;
+}
+

@@ -1,4 +1,7 @@
 import React from 'react'
+import GoogleMaps from "simple-react-google-maps"
+
+
 
 class Home extends React.Component {
 
@@ -14,7 +17,20 @@ class Home extends React.Component {
                         <h2>Cocktails</h2></div>
                     <div className='food'>
                         <h2>Food</h2></div>
+                        <div className = 'googleMap'>
+                        <GoogleMaps
+  apiKey={"AIzaSyBiY6zDgvndubHYybHkhfZLuxhAlBRz0PE"}
+  style={{height: "400px", width: "100%"}}
+  zoom={15}
+  center={{lat: 41.043296, lng: -73.532314}}
+  markers={{lat: 41.043296, lng: -73.532314}} //optional
+/>
+</div>
+
                 </div>
+
+   
+                
             </div>
         )
     }

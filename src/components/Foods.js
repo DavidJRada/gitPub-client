@@ -19,6 +19,7 @@ class Foods extends React.Component {
         this.state = {
             foods: [],
             food: {},
+            isLoggedIn: false,
             edit: false
         }
         this.getFoods = this.getFoods.bind(this)
@@ -49,7 +50,7 @@ class Foods extends React.Component {
         this.setState({
             foods: copyEditFoods
         })
-        this.setState({edit: false} )
+        this.setState({ edit: false })
     }
 
     getFoods() {
@@ -67,53 +68,54 @@ class Foods extends React.Component {
         })
     }
     toggleEdit(edit) {
-       this.setState({edit: !edit})
-    //    console.log('It hit')
+        this.setState({ edit: !edit })
+        //    console.log('It hit')
     }
-        currentFood(index) {
-            // console.log(this.state.foods[index])
-            this.setState({food: this.state.foods[index]})
-        }
+    currentFood(index) {
+        // console.log(this.state.foods[index])
+        this.setState({ food: this.state.foods[index] })
+    }
 
     render() {
         console.log(this.state.edit)
         return (
             <div className='foods'>
                 <h1>Foods</h1>
-                <p>Admin can only view NewFoodForm</p>
-                {this.state.edit ? <UpdateFoodForm food={this.state.food} handleEditFood={this.handleEditFood}/> : <NewFoodForm handleAddFood={this.handleAddFood} /> }
+                {
+                    this.props.isLoggedIn && (this.state.edit ? <UpdateFoodForm drink={this.state.drink} handleEditDrink={this.handleEditDrink} /> : <NewFoodForm handleAddDrink={this.handleAddDrink} />) 
+                }
 
-        <div class = "row">
-            {this.state.foods.map((food, index) => {
-                    return (
-                        <div class = "col s4 m4">
-                        <div className='card' key={food._id} index={index} onClick={() => { this.currentFood(index) }}>
+                <div class="row">
+                    {this.state.foods.map((food, index) => {
+                        return (
+                            <div class="col s4 m4">
+                                <div className='card' key={food._id} index={index} onClick={() => { this.currentFood(index) }}>
 
-                            <div className='card-title'>{food.name}</div>
-                            <div className='card-image waves-effect waves-block waves-light'>
-                                <img class="activator" src={food.image}></img>
+                                    <div className='card-title'>{food.name}</div>
+                                    <div className='card-image waves-effect waves-block waves-light'>
+                                        <img class="activator" src={food.image}></img>
+                                    </div>
+
+                                    <p>${food.price}</p>
+                                    <div class="left">
+                                        <div className='card-action' onClick={() => { this.deleteFood(food._id) }}>Delete</div>
+                                    </div>
+                                    <div class="right">
+                                        <div className='card-action' onClick={() => { this.toggleEdit(this.state.edit) }} > Edit</div>
+                                    </div>
+                                    {/* can't display an array so we need another .map()... maybe if it an array- not if it's a string*/}
+
+                                    <div class="card-reveal">
+                                        <span class="card-title grey-text text-darken-4">{food.name}<i class="material-icons right">X</i></span>
+                                        <p>Ingredients: {food.ingredients}</p>
+                                        <p>Price: ${food.price}</p>
+                                    </div>
+                                </div>
                             </div>
-
-                            <p>${food.price}</p>
-                            <div class = "left">
-                            <div className = 'card-action' onClick={() => { this.deleteFood(food._id) }}>Delete</div>
-                            </div>
-                            <div class = "right">
-                            <div className = 'card-action' onClick={() => { this.toggleEdit(this.state.edit) }} > Edit</div>
-                            </div>
-        {/* can't display an array so we need another .map()... maybe if it an array- not if it's a string*/}
-
-    <div class="card-reveal">
-      <span class="card-title grey-text text-darken-4">{food.name}<i class="material-icons right">X</i></span>
-      <p>Ingredients: {food.ingredients}</p>
-      <p>Price: ${food.price}</p>
-    </div>
-                        </div> 
-                        </div>     
-                            )
-                        })}
+                        )
+                    })}
                 </div>
-              
+
             </div>
         )
     }

@@ -19,7 +19,9 @@ class Drinks extends React.Component {
         this.state = {
             drinks: [],
             drink: {},
-            edit: false
+            isLoggedIn: false,
+            edit: false,
+
         }
         this.getDrinks = this.getDrinks.bind(this)
         this.handleAddDrink = this.handleAddDrink.bind(this)
@@ -76,10 +78,13 @@ class Drinks extends React.Component {
     }
 
     render() {
+        console.log(localStorage.isLoggedIn)
         return (
             <div className='drinks'>
                 <h1>Drinks</h1>
-                {this.state.edit ? <UpdateForm drink={this.state.drink} handleEditDrink={this.handleEditDrink} /> : <NewForm handleAddDrink={this.handleAddDrink} />}
+                {
+                    this.props.isLoggedIn && (this.state.edit ? <UpdateForm drink={this.state.drink} handleEditDrink={this.handleEditDrink} /> : <NewForm handleAddDrink={this.handleAddDrink} />) 
+                }
                 <div className="row">
 
                     {this.state.drinks.map((drink, index) => {
@@ -93,13 +98,12 @@ class Drinks extends React.Component {
                                     </div>
 
                                     <p>${drink.price}</p>
-                                    <div className="left">
+                                    {this.props.isLoggedIn ? <div className="left">
                                         <div className='card-action' onClick={() => { this.deleteDrink(drink._id) }}>Delete</div>
-                                    </div>
-                                    <div className="right">
+                                    </div> : null}
+                                    {this.props.isLoggedIn ? <div className="right">
                                         <div className='card-action' onClick={() => { this.toggleEdit(this.state.edit) }} > Edit</div>
-                                    </div>
-                                    {/* can't display an array so we need another .map()... maybe if it an array- not if it's a string*/}
+                                    </div> : null}
                                     <div className="card-reveal">
                                         <span className="card-title grey-text text-darken-4">{drink.name}<i className="material-icons right">X</i></span>
                                         <p>Ingredients: {drink.ingredients}</p>

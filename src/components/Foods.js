@@ -81,7 +81,7 @@ class Foods extends React.Component {
             <div className='foods'>
 
                 {
-                    this.props.isLoggedIn && (this.state.edit ? <UpdateFoodForm drink={this.state.drink} handleEditDrink={this.handleEditDrink} /> : <NewFoodForm handleAddDrink={this.handleAddDrink} />)
+                    this.props.isLoggedIn && (this.state.edit ? <UpdateFoodForm food={this.state.food} handleEditFood={this.handleEditFood} /> : <NewFoodForm handleAddFood={this.handleAddFood} />)
                 }
                 <div className="row">
                     {this.state.foods.map((food, index) => {
@@ -95,12 +95,12 @@ class Foods extends React.Component {
                                     </div>
 
                                     <p>${food.price}</p>
-                                    <div className="left">
+                                    {this.props.isLoggedIn ? <div className="left">
                                         <div className='card-action' onClick={() => { this.deleteFood(food._id) }}>Delete</div>
-                                    </div>
-                                    <div className="right">
+                                    </div> : null}
+                                    {this.props.isLoggedIn ? <div className="right">
                                         <div className='card-action' onClick={() => { this.toggleEdit(this.state.edit) }} > Edit</div>
-                                    </div>
+                                    </div> : null}
                                     <div className="card-reveal">
                                         <span className="card-title grey-text text-darken-4">{food.name}<i className="material-icons right">X</i></span>
                                         <p>Ingredients: {food.ingredients}</p>

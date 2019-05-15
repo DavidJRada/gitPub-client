@@ -46,17 +46,22 @@ class App extends React.Component {
           <nav>
             <div className='nav-wrapper black text-darken-2'>
               <Link to="/">Home</Link>
-              <Link to="/drinks">Drinks</Link>
+              <Link to='#'>||</Link>
+              <Link to="/drinks">Drinks</Link> 
+              <Link to='#'>||</Link>
               <Link to="/foods">Food</Link>
+              <Link to='#'>||</Link>
               <Link to="/contact">Contact</Link>
+              <Link to='#'>||</Link>
               <Link to="/about">About</Link>
+              <Link to='#'>||</Link>
               {this.state.isLoggedIn ? null : <Link to="/login">Log In</Link>}
               {this.state.isLoggedIn ? <Link to='/' onClick={this.toggleLogIn}>Log Out</Link>
                 : null}
 
             </div>
           </nav>
-          <h4 className='quote'>"Get Your Eat and Drink On With Some JSON" - N.W.A</h4>
+          <h4 className='quote'>"Dine at {'<table>'} || drink at foo bar with .random" - Mozart</h4>
           <Route path='/' exact component={Home} />
           <Route path='/drinks' render={() => <Drinks isLoggedIn={this.state.isLoggedIn} />} />
 

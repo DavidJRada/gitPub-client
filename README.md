@@ -1,7 +1,7 @@
 Title: GitPub <br>
-Live Link: https://gitpub-client.herokuapp.com/
+Live Link: https://gitpub-client.herokuapp.com/ <br>
 Type: Project-3, Group Project<br>
-Creators: David Rada, Jon Weinstein, Sebastian D'Arena
+Creators: David Rada, Jon Weinstein, Sebastian D'Arena <br>
 Competencies: Trello, REACT, Materialize, REACT-materialize, npm,
 Mongodb, Mongoose, User auth, CRUD, 2 models (food, drinks)<br>
 Prerequisites: Knowledge of alcoholic beverages, coding terminoligy,

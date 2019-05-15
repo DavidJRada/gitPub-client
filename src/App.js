@@ -6,7 +6,6 @@ import Foods from './components/Foods'
 import Contact from './components/Contact'
 import About from './components/About'
 import Footer from './components/Footer'
-import Cart from './components/Cart'
 import Login from './components/login/Login'
 import './css/App.css';
 import 'materialize-css'; // It installs the JS asset only
@@ -27,7 +26,6 @@ class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      cart: ["hello"],
       username: '',
       isLoggedIn: false
     }
@@ -55,18 +53,15 @@ class App extends React.Component {
                <Link to="/foods">Food</Link>
                <Link to="/contact">Contact</Link>
                <Link to="/about">About</Link>
-               <Link to="/cart">Cart</Link>
               <Link>{this.state.isLoggedIn ? <button onClick={this.toggleLogIn}>Log Out</button>
                 : null}</Link>
             </div>
           </nav>
           <Route path='/' exact component={Home} />
-          <Route path='/drinks' render={(props) => <Drinks {...props} cart={this.state.cart} />}
-/>
+          <Route path='/drinks' component = {Drinks} />
           <Route path='/foods' component={Foods} />
           <Route path='/contact' component={Contact} />
           <Route path='/about' component={About} />
-          <Route path='/cart' component={Cart} />
 
         </div>
      

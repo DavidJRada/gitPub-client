@@ -16,7 +16,7 @@ class About extends React.Component {
 
                     <p>David Rada has a bachelors in being cool and </p>
                     
-                    <p>Sebastian has a bachelors in politial science and was a sous chef for most of his professional career.  He became interested in programming through wanting to improve the lives of others through beneficial apps. </p>
+                    <p>Sebastian has a bachelors in politial science and was a sous chef for most of his professional career.  He became interested in programming through striving to improve the lives of others via useful apps. </p>
                         
                     <p>Jon has a bachelors in Math and a Masters in Financial Risk Management.  He has worked as a financial analyst for his entire professional career, where he learned to code in VBA, thus sparking his interest in programming. </p>
                 </div>

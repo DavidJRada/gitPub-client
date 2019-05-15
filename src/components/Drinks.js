@@ -1,7 +1,7 @@
 import React from 'react'
 import NewForm from './NewForm'
 import UpdateForm from './UpdateForm'
-import Cart from './Cart'
+
 
 let baseURL = process.env.REACT_APP_BASEURL
 
@@ -20,8 +20,7 @@ class Drinks extends React.Component {
         this.state = {
             drinks: [],
             drink: {},
-            edit: false,
-            addToCart: []
+            edit: false
         }
         this.getDrinks = this.getDrinks.bind(this)
         this.handleAddDrink = this.handleAddDrink.bind(this)
@@ -30,7 +29,6 @@ class Drinks extends React.Component {
         this.toggleEdit = this.toggleEdit.bind(this)
         this.handleEditDrink = this.handleEditDrink.bind(this)
         this.currentDrink = this.currentDrink.bind(this)
-        this.addToCart = this.currentDrink.bind(this)
 
     }
     componentDidMount() {
@@ -81,16 +79,8 @@ class Drinks extends React.Component {
         // console.log(this.state.drinks[index])
         this.setState({drink: this.state.drinks[index]})
     }
-    handleAddToCart(drink) {
-        console.log("addToCart")
-        const addToCart = [drink];
-        console.log(addToCart)
-       
-    }
 
     render() {
-        this.props.cart.push("goodbye");
-        console.log(this.props.cart)
         return (
             <div className='drinks'>
                 <h1>Drinks</h1>

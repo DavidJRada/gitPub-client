@@ -1,6 +1,7 @@
 import React from 'react'
 import NewForm from './NewForm'
 import UpdateForm from './UpdateForm'
+import Cart from './Cart'
 
 let baseURL = process.env.REACT_APP_BASEURL
 
@@ -19,7 +20,8 @@ class Drinks extends React.Component {
         this.state = {
             drinks: [],
             drink: {},
-            edit: false
+            edit: false,
+            addToCart: []
         }
         this.getDrinks = this.getDrinks.bind(this)
         this.handleAddDrink = this.handleAddDrink.bind(this)
@@ -28,6 +30,7 @@ class Drinks extends React.Component {
         this.toggleEdit = this.toggleEdit.bind(this)
         this.handleEditDrink = this.handleEditDrink.bind(this)
         this.currentDrink = this.currentDrink.bind(this)
+        this.addToCart = this.currentDrink.bind(this)
 
     }
     componentDidMount() {
@@ -70,18 +73,27 @@ class Drinks extends React.Component {
        this.setState({edit: !edit})
     //    console.log('It hit')
     }
-        currentDrink(index) {
-            // console.log(this.state.drinks[index])
-            this.setState({drink: this.state.drinks[index]})
-        }
+    currentDrink(index) {
+        // console.log(this.state.drinks[index])
+        this.setState({drink: this.state.drinks[index]})
+    }
+    handleAddToCart(drink) {
+        console.log("addToCart")
+        const addToCart = [drink];
+        console.log(addToCart)
+       
+    }
 
     render() {
-        console.log(this.state.edit)
+        this.props.cart.push("goodbye");
+        console.log(this.props.cart)
         return (
             <div className='drinks'>
                 <h1>Drinks</h1>
                 <p>Admin can only view NewForm</p>
                 {this.state.edit ? <UpdateForm drink={this.state.drink} handleEditDrink={this.handleEditDrink}/> : <NewForm handleAddDrink={this.handleAddDrink} /> }
+                
+                
 
                 <table className='drinksDisplay'>
                     <tbody>
@@ -90,6 +102,9 @@ class Drinks extends React.Component {
                             <td>Image</td>
                             <td>Ingredients</td>
                             <td>Price</td>
+                            <td>Delete</td>
+                            <td>Edit</td>
+                            <td>Add to Cart</td>
                         </tr>
                         {this.state.drinks.map((drink, index) => {
                             return (
@@ -99,9 +114,11 @@ class Drinks extends React.Component {
                                     <td>{drink.image}</td>
                                     <td>{drink.ingredients}</td>
                                     <td>{drink.price}</td>
+                                    
 
                                     <td onClick={() => { this.deleteDrink(drink._id) }}>X</td>
-                                    <td onClick={() => { this.toggleEdit(this.state.edit) }} >Edit</td>
+                                    <td onClick={() => {    this.toggleEdit(this.state.edit) }} >Edit</td>
+                                    <td onClick={() => { this.handleAddToCart(drink._id) }} >Add to Cart</td>
                                 </tr>
                             )
                         })}

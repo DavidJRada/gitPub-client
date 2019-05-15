@@ -14,7 +14,11 @@ class About extends React.Component {
 
                     <p>We are currently working on opening up an actual gitPub in the Stamford area.  Some of our signature cocktails include the APIPA and the Baby Got Backend.  The goal is to open our doors in August, 2019 and have our Grand Opening around Labor Day.</p>
 
-                    <p>David Rada has a bachelors in being cool while Sebastian has a bachelors in being awesome.  Jon has a bachelors in Math and has worked as a financial analyst for his entire professional career, where he learned to code in VBA, sparking his interest in programming. </p>
+                    <p>David Rada has a bachelors in being cool and </p>
+                    
+                    <p>Sebastian has a bachelors in politial science and was a sous chef for most of his professional career.  He became interested in programming through wanting to improve the lives of others through beneficial apps. </p>
+                        
+                    <p>Jon has a bachelors in Math and a Masters in Financial Risk Management.  He has worked as a financial analyst for his entire professional career, where he learned to code in VBA, thus sparking his interest in programming. </p>
                 </div>
             </>
         )

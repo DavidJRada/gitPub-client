@@ -33,10 +33,17 @@ class App extends React.Component {
     this.toggleLogIn = this.toggleLogIn.bind(this)
   }
   toggleLogIn(username) {
-    // console.log(this.state.isLoggedIn)
-    localStorage.setItem('isLoggedIn', 'true')
+    console.log(this.state.isLoggedIn)
+    this.setState({ isLoggedIn: !this.state.isLoggedIn })
+    if (localStorage.isLoggedIn) {
+      localStorage.setItem('isLoggedIn', 'false')
+    } else {
+      localStorage.setItem('isLoggedIn', 'true')
+    }
     if (username === 'Admin') {
       localStorage.setItem('isAdmin', 'true')
+    } else {
+      localStorage.setItem('isAdmin', 'false')
     }
   }
 
@@ -46,7 +53,7 @@ class App extends React.Component {
         <div className="container">
           <h1>The GitPub</h1>
           <h2>Get Your Eat and Drink On With Some JSON</h2>
-          {this.state.isLoggedIn ? <h2>Welcome {this.state.username}</h2>
+          {localStorage.isLoggedIn ? <h2>Welcome Admin!</h2>
             : null}
           <nav>
             <div className='nav-wrapper'>
@@ -55,7 +62,7 @@ class App extends React.Component {
               <Link to="/foods">Food</Link>
               <Link to="/contact">Contact</Link>
               <Link to="/about">About</Link>
-              {this.state.isLoggedIn ? null : <Link to="/login">Log In</Link>}
+              {localStorage.isLoggedIn ? null : <Link to="/login">Log In</Link>}
               {this.state.isLoggedIn ? <Link to='/' onClick={this.toggleLogIn}>Log Out</Link>
                 : null}
 

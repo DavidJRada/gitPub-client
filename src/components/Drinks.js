@@ -19,9 +19,7 @@ class Drinks extends React.Component {
         this.state = {
             drinks: [],
             drink: {},
-            edit: false,
-            addToCart: [],
-
+            edit: false
         }
         this.getDrinks = this.getDrinks.bind(this)
         this.handleAddDrink = this.handleAddDrink.bind(this)
@@ -82,12 +80,7 @@ class Drinks extends React.Component {
             <div className='drinks'>
                 <h1>Drinks</h1>
                 {this.state.edit ? <UpdateForm drink={this.state.drink} handleEditDrink={this.handleEditDrink} /> : <NewForm handleAddDrink={this.handleAddDrink} />}
-
-
                 <div className="row">
-
-
-
 
                     {this.state.drinks.map((drink, index) => {
                         return (
@@ -95,13 +88,23 @@ class Drinks extends React.Component {
                                 <div className='card' key={drink._id} index={index} onClick={() => { this.currentDrink(index) }}>
 
                                     <div className='card-title'>{drink.name}</div>
-                                    <div className='card-image'>
-                                        <img src={drink.image}></img>
+                                    <div className='card-image waves-effect waves-block waves-light'>
+                                        <img className="activator" src={drink.image}></img>
                                     </div>
-                                    <div className='card-content'><p>{drink.ingredients}<br /><br />
-                                        ${drink.price}</p></div>
+
+                                    <p>${drink.price}</p>
+                                    <div className="left">
                                         <div className='card-action' onClick={() => { this.deleteDrink(drink._id) }}>Delete</div>
+                                    </div>
+                                    <div className="right">
                                         <div className='card-action' onClick={() => { this.toggleEdit(this.state.edit) }} > Edit</div>
+                                    </div>
+                                    {/* can't display an array so we need another .map()... maybe if it an array- not if it's a string*/}
+                                    <div className="card-reveal">
+                                        <span className="card-title grey-text text-darken-4">{drink.name}<i className="material-icons right">X</i></span>
+                                        <p>Ingredients: {drink.ingredients}</p>
+                                        <p>Price: ${drink.price}</p>
+                                    </div>
                                 </div>
                             </div>
                         )

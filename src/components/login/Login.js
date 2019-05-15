@@ -19,6 +19,7 @@ class Login extends React.Component {
     }
     handleSubmit(event) {
         event.preventDefault()
+        console.log(this.props)
         this.props.toggleLogIn(this.state.username)
         // console.log(isLoggedIn)
     }
@@ -26,15 +27,15 @@ class Login extends React.Component {
 
     render() {
         return (
-            <div className="login row">
+            <div className="login">
                 <form className='col s12'>
                     <div className='row'>
                         <div className='input-field col s6'>
-                            <input placeholder='Username' id='username' type='text' className='validate' value={this.state.email} onChange={this.handleChange} />
+                            <input id='username' type='text' className='validate' value={this.state.email} onChange={this.handleChange} />
                             <label htmlFor='username'>Username</label>
                         </div>
                         <div className='input-field col s6'>
-                            <input placeholder='password' id='password' type='password' className='validate' onChange={this.handleChange} />
+                            <input  id='password' type='password' className='validate' onChange={this.handleChange} />
                             <label htmlFor='password'>Password</label>
                         </div>
                         <button onClick={this.handleSubmit}>LogIn</button>

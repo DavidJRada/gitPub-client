@@ -25,5 +25,17 @@
     border: 3px solid gold;
   }
 
-  
+  .nav-wrapper {
+    display: flex;
+    font-size: 15px;
+    justify-content: space-between;
+    margin: 0px 20px;
+  }
+ 
+.login {
+  display: flex;
+  margin-top: 50px;
+  justify-content: center;
+  border: 1px solid black;
+}
   

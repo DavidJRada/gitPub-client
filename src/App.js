@@ -6,7 +6,6 @@ import Foods from './components/Foods'
 import Contact from './components/Contact'
 import About from './components/About'
 import Footer from './components/Footer'
-import Cart from './components/Cart'
 import Login from './components/login/Login'
 import './css/App.css';
 import 'materialize-css'; // It installs the JS asset only
@@ -27,17 +26,18 @@ class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      cart: ["hello"],
       username: '',
-      isLoggedIn: false
+      isLoggedIn: false,
+      isAdmin: false
     }
     this.toggleLogIn = this.toggleLogIn.bind(this)
   }
   toggleLogIn(username) {
     // console.log(this.state.isLoggedIn)
-    this.setState({ isLoggedIn: !this.state.isLoggedIn, username: username })
-    console.log(this.state.isLoggedIn, username)
-
+    localStorage.setItem('isLoggedIn', 'true')
+    if (username === 'Admin') {
+      localStorage.setItem('isAdmin', 'true')
+    }
   }
 
   render() {
@@ -47,31 +47,32 @@ class App extends React.Component {
           <h1>The GitPub</h1>
           <h2>Get Your Eat and Drink On With Some JSON</h2>
           {this.state.isLoggedIn ? <h2>Welcome {this.state.username}</h2>
-            : <Login toggleLogIn={this.toggleLogIn} />}
+            : null}
           <nav>
             <div className='nav-wrapper'>
-                <Link to="/">Home</Link>
-                <Link to="/drinks">Drinks</Link>
-               <Link to="/foods">Food</Link>
-               <Link to="/contact">Contact</Link>
-               <Link to="/about">About</Link>
-               <Link to="/cart">Cart</Link>
-              <Link>{this.state.isLoggedIn ? <button onClick={this.toggleLogIn}>Log Out</button>
-                : null}</Link>
+              <Link to="/">Home</Link>
+              <Link to="/drinks">Drinks</Link>
+              <Link to="/foods">Food</Link>
+              <Link to="/contact">Contact</Link>
+              <Link to="/about">About</Link>
+              {this.state.isLoggedIn ? null : <Link to="/login">Log In</Link>}
+              {this.state.isLoggedIn ? <Link to='/' onClick={this.toggleLogIn}>Log Out</Link>
+                : null}
+
             </div>
           </nav>
           <Route path='/' exact component={Home} />
-          <Route path='/drinks' render={(props) => <Drinks {...props} cart={this.state.cart} />}
-/>
+          <Route path='/drinks' render={() => <Drinks username={this.state.username} />} />
+
           <Route path='/foods' component={Foods} />
           <Route path='/contact' component={Contact} />
           <Route path='/about' component={About} />
-          <Route path='/cart' component={Cart} />
+          <Route path="/login" render={() => <Login toggleLogIn={this.toggleLogIn} />} />
 
         </div>
-     
+
         <Footer />
-        
+
       </Router>
     );
   }

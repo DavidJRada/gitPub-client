@@ -2,6 +2,10 @@
     text-align: center;
   }
 
+  body {
+    background-image: url('https://i.imgur.com/fheeOpc.jpg');
+    font-family: "courier"
+  }
   
   /* div {
     border: 1px solid black;
@@ -27,9 +31,20 @@
 
   .nav-wrapper {
     display: flex;
-    font-size: 15px;
-    justify-content: space-between;
-    margin: 0px 20px;
+    font-size: 30px;
+    justify-content: space-evenly;
+    color: black;
+    border: 0px;
+    font-family: "courier"
+  }
+
+  .navLinking {
+    display: inline;
+  }
+
+  nav {
+    background-color: transparent;
+    color: black;
   }
  
 .login {
@@ -42,6 +57,22 @@
     border: .5px solid black;
   }
 
- 
-  
+ form {
+    border: 3px solid black;
+    text-align: left;
+    background: lightgray;
+    opacity: 0.6;
+
+  }
+
+
+input {
+  border-bottom: 5px solid black;
+}
+
+label {
+  font-size: 30px;
+  color: black;
+
+}
   

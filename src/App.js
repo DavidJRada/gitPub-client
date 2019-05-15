@@ -51,12 +51,12 @@ class App extends React.Component {
     return (
       <Router>
         <div className="container">
-          <h1>The GitPub</h1>
-          <h2>Get Your Eat and Drink On With Some JSON</h2>
-          {localStorage.isLoggedIn ? <h2>Welcome Admin!</h2>
-            : null}
+
+         
+          {localStorage.isLoggedIn ? <h1>GitPub - Welcome Admin!</h1>
+            : "GitPub"}
           <nav>
-            <div className='nav-wrapper'>
+            <div className='nav-wrapper black text-darken-2'>
               <Link to="/">Home</Link>
               <Link to="/drinks">Drinks</Link>
               <Link to="/foods">Food</Link>
@@ -68,6 +68,7 @@ class App extends React.Component {
 
             </div>
           </nav>
+          <h3>Get Your Eat and Drink On With Some JSON</h3>
           <Route path='/' exact component={Home} />
           <Route path='/drinks' render={() => <Drinks username={this.state.username} />} />
 

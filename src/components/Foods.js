@@ -80,7 +80,6 @@ class Foods extends React.Component {
         return (
             <div className='foods'>
                 <h1>Foods</h1>
-                <p>Admin can only view NewFoodForm</p>
                 {this.state.edit ? <UpdateFoodForm food={this.state.food} handleEditFood={this.handleEditFood}/> : <NewFoodForm handleAddFood={this.handleAddFood} /> }
 
         <div class = "row">

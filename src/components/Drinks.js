@@ -96,23 +96,30 @@ class Drinks extends React.Component {
                 <h1>Drinks</h1>
                 <p>Admin can only view NewForm</p>
                 {this.state.edit ? <UpdateForm drink={this.state.drink} handleEditDrink={this.handleEditDrink} /> : <NewForm handleAddDrink={this.handleAddDrink} />}
+<div class = "row">
+        
+       
+ 
 
                 {this.state.drinks.map((drink, index) => {
                     return (
+                        <div class = "col s4 m4">
                         <div className='card' key={drink._id} index={index} onClick={() => { this.currentDrink(index) }}>
 
-                            <div className='drink-name'>{drink.name}</div>
-                            <div className='drink-image'>
+                            <div className='card-title'>{drink.name}</div>
+                            <div className='card-image'>
                                 <img src={drink.image}></img>
                             </div>
-                            <div className='drink-ingredients'>{drink.ingredients}</div>
-                            <div className='drink-price'>{drink.price}</div>
-                            <div onClick={() => { this.deleteDrink(drink._id) }}>Delete</div>
-                            <div onClick={() => { this.toggleEdit(this.state.edit) }} > Edit</div>
+                            <div className='card-content'><p>{drink.ingredients}<br/><br/>
+                            ${drink.price}</p></div>
+                            <div className = 'card-action' onClick={() => { this.deleteDrink(drink._id) }}>Delete</div>
+                            <div className = 'card-action' onClick={() => { this.toggleEdit(this.state.edit) }} > Edit</div>
         {/* can't display an array so we need another .map()... maybe if it an array- not if it's a string*/}
-                        </div>      
+                        </div> 
+                        </div>     
                             )
                         })}
+                </div>
                 </div>
             
             )

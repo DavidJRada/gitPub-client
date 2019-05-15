@@ -63,19 +63,19 @@ class UpdateForm extends React.Component {
                 <input type="text" id="image" name="image" onChange={this.handleChange} defaultValue={this.props.drink.image} />
 
 
-                {/* <div class="input-field">
+                <div class="input-field">
                     <textarea id="ingredients" className="materialize-textarea" onChange={this.handleChange} defaultValue={this.props.drink.ingredients}></textarea>
                     <label htmlFor="ingredients">Ingredients:</label>
-                </div> */}
+                </div>
 
 
                 <label htmlFor="ingredients">Ingredients: </label>
                 <Textarea 
-                    // type="text"
-                    // id="ingredients"
-                    // name="ingredients"
-                    // onChange={this.handleChange}
-                    // defaultValue={this.props.drink.ingredients}
+                    type="text"
+                    id="ingredients"
+                    name="ingredients"
+                    onChange={this.handleChange}
+                    defaultValue={this.props.drink.ingredients}
                 />
 
 

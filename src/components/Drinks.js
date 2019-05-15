@@ -82,35 +82,26 @@ class Drinks extends React.Component {
                 <p>Admin can only view NewForm</p>
                 {this.state.edit ? <UpdateForm drink={this.state.drink} handleEditDrink={this.handleEditDrink} /> : <NewForm handleAddDrink={this.handleAddDrink} />}
 
-                <table className='drinksDisplay'>
-                    <tbody>
-                        <tr>
-                            <td>Name</td>
-                            <td>Image</td>
-                            <td>Ingredients</td>
-                            <td>Price</td>
-                        </tr>
-                        {this.state.drinks.map((drink, index) => {
-                            return (
-                                <tr key={drink._id} index={index} onClick={() => { this.currentDrink(index) }}>
+                {this.state.drinks.map((drink, index) => {
+                    return (
+                        <div className='card' key={drink._id} index={index} onClick={() => { this.currentDrink(index) }}>
 
-                                    <td>{drink.name}</td>
-                                    <td>{drink.image}</td>
-                                    <td>{drink.ingredients}</td>
-                                    <td>{drink.price}</td>
-
-                                    <td onClick={() => { this.deleteDrink(drink._id) }}>X</td>
-                                    <td onClick={() => { this.toggleEdit(this.state.edit) }} >Edit</td>
-                                </tr>
+                            <div className='drink-name'>{drink.name}</div>
+                            <div className='drink-image'>
+                                <img src={drink.image}></img>
+                            </div>
+                            <div className='drink-ingredients'>{drink.ingredients}</div>
+                            <div className='drink-price'>{drink.price}</div>
+                            <div onClick={() => { this.deleteDrink(drink._id) }}>Delete</div>
+                            <div onClick={() => { this.toggleEdit(this.state.edit) }} > Edit</div>
+        {/* can't display an array so we need another .map()... maybe if it an array- not if it's a string*/}
+                        </div>      
                             )
                         })}
-                    </tbody>
-                </table>
-            </div>
-        )
+                </div>
+            
+            )
+        }
     }
-}
-
-
-
+    
 export default Drinks

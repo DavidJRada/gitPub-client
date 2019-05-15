@@ -63,18 +63,18 @@ class NewFoodForm extends React.Component {
         return (
             <form onSubmit={this.handleSubmit}>
                 <label htmlFor="name">Name: </label>
-                <input type="text" id="name" name="name" onChange={this.handleChange} value={this.state.name} placeholder="Name" />
+                <input type="text" id="name" name="name" onChange={this.handleChange} value={this.state.name} />
 
                 <label htmlFor="image">Image: </label>
-                <input type="text" id="image" name="image" onChange={this.handleChange} value={this.state.image} placeholder="Image url" />
+                <input type="text" id="image" name="image" onChange={this.handleChange} value={this.state.image} />
 
 
                 <label htmlFor="ingredients">Ingredients: </label>
-                <textarea type="text" id="ingredients" name="ingredients" onChange={this.handleChange} value={this.state.ingredients} placeholder="Ingredients" />
+                <textarea type="text" id="ingredients" name="ingredients" onChange={this.handleChange} value={this.state.ingredients}  />
 
 
                 <label htmlFor="price">Price: </label>
-                <input type="number" id="price" name="price" onChange={this.handleChange} value={this.state.price} placeholder="Price" />
+                <input type="number" id="price" name="price" onChange={this.handleChange} value={this.state.price}  />
 
                 <input type="submit" value="Add a Food" />
             </form>

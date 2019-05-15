@@ -1,4 +1,5 @@
 import React from 'react'
+import { Textarea } from 'react-materialize';
 
 let baseURL = process.env.REACT_APP_BASEURL
 
@@ -62,8 +63,20 @@ class UpdateForm extends React.Component {
                 <input type="text" id="image" name="image" onChange={this.handleChange} defaultValue={this.props.drink.image} />
 
 
+                <div class="input-field">
+                    <textarea id="ingredients" className="materialize-textarea" onChange={this.handleChange} defaultValue={this.props.drink.ingredients}></textarea>
+                    <label htmlFor="ingredients">Ingredients:</label>
+                </div>
+
+
                 <label htmlFor="ingredients">Ingredients: </label>
-                <textarea type="text" id="ingredients" name="ingredients" onChange={this.handleChange} defaultValue={this.props.drink.ingredients} />
+                <Textarea 
+                    type="text"
+                    id="ingredients"
+                    name="ingredients"
+                    onChange={this.handleChange}
+                    defaultValue={this.props.drink.ingredients}
+                />
 
 
                 <label htmlFor="price">Price: </label>

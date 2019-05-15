@@ -49,7 +49,7 @@ class Drinks extends React.Component {
         this.setState({
             drinks: copyEditDrinks
         })
-        this.setState({edit: false} )
+        this.setState({ edit: false })
     }
 
     getDrinks() {
@@ -67,51 +67,53 @@ class Drinks extends React.Component {
         })
     }
     toggleEdit(edit) {
-       this.setState({edit: !edit})
-    //    console.log('It hit')
+        this.setState({ edit: !edit })
+        //    console.log('It hit')
     }
-        currentDrink(index) {
-            // console.log(this.state.drinks[index])
-            this.setState({drink: this.state.drinks[index]})
-        }
+    currentDrink(index) {
+        // console.log(this.state.drinks[index])
+        this.setState({ drink: this.state.drinks[index] })
+    }
 
     render() {
-        console.log(this.state.edit)
         return (
             <div className='drinks'>
                 <h1>Drinks</h1>
-                <p>Admin can only view NewForm</p>
-                {this.state.edit ? <UpdateForm drink={this.state.drink} handleEditDrink={this.handleEditDrink}/> : <NewForm handleAddDrink={this.handleAddDrink} /> }
+                {this.state.edit ? <UpdateForm drink={this.state.drink} handleEditDrink={this.handleEditDrink} /> : <NewForm handleAddDrink={this.handleAddDrink} />}
+                <div className="row">
 
-                <table className='drinksDisplay'>
-                    <tbody>
-                        <tr>
-                            <td>Name</td>
-                            <td>Image</td>
-                            <td>Ingredients</td>
-                            <td>Price</td>
-                        </tr>
-                        {this.state.drinks.map((drink, index) => {
-                            return (
-                                <tr key={drink._id} index={index} onClick= {() =>{this.currentDrink(index)}}>
+                    {this.state.drinks.map((drink, index) => {
+                        return (
+                            <div className="col s4 m4">
+                                <div className='card' key={drink._id} index={index} onClick={() => { this.currentDrink(index) }}>
 
-                                    <td>{drink.name}</td>
-                                    <td>{drink.image}</td>
-                                    <td>{drink.ingredients}</td>
-                                    <td>{drink.price}</td>
+                                    <div className='card-title'>{drink.name}</div>
+                                    <div className='card-image waves-effect waves-block waves-light'>
+                                        <img className="activator" src={drink.image}></img>
+                                    </div>
 
-                                    <td onClick={() => { this.deleteDrink(drink._id) }}>X</td>
-                                    <td onClick={() => { this.toggleEdit(this.state.edit) }} >Edit</td>
-                                </tr>
-                            )
-                        })}
-                    </tbody>
-                </table>
+                                    <p>${drink.price}</p>
+                                    <div className="left">
+                                        <div className='card-action' onClick={() => { this.deleteDrink(drink._id) }}>Delete</div>
+                                    </div>
+                                    <div className="right">
+                                        <div className='card-action' onClick={() => { this.toggleEdit(this.state.edit) }} > Edit</div>
+                                    </div>
+                                    {/* can't display an array so we need another .map()... maybe if it an array- not if it's a string*/}
+                                    <div className="card-reveal">
+                                        <span className="card-title grey-text text-darken-4">{drink.name}<i className="material-icons right">X</i></span>
+                                        <p>Ingredients: {drink.ingredients}</p>
+                                        <p>Price: ${drink.price}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        )
+                    })}
+                </div>
             </div>
+
         )
     }
 }
-
-
 
 export default Drinks

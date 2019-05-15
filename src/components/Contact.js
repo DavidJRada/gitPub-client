@@ -8,7 +8,38 @@ class Contact extends React.Component {
         return (
             <div className='contact'>
                 <h1>Contact Us</h1>
-                <h3>Want to stay up to date on our grand opening and new specials? </h3>    
+                <h3>Want to stay up to date on our grand opening and new specials? </h3>
+                
+<p>David Rada<br/>
+LinkedIn:<br/>
+E-mail: <br/>
+GitHub: <br/>
+Website:<br/>
+Cell: <br/>
+</p>
+
+<p>Sebastian D'Arena<br/>
+
+E-mail: <br/>
+LinkedIn:<br/>
+GitHub: <br/>
+Website:<br/>
+Cell: <br/>
+</p>
+
+<p>Jon Weinstein<br/>
+
+E-mail: Jweinst4@gmail.com<br/>
+<a href = 'https://www.linkedin.com/in/jon-weinstein-301665181/'>LinkedIn</a><br/>
+<a href = 'https://jweinst4.github.io/'>Wheel of Fortune App</a><br/>
+<a href = 'https://desolate-fortress-92634.herokuapp.com/'>Digital Closet App</a><br/>
+Cell: 914 715 3894<br/>
+</p>
+
+
+
+         
+
                 <div className=''></div>
             </div>
         )

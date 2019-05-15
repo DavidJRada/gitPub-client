@@ -20,12 +20,11 @@ Cell: <br/>
 
 <p>Sebastian D'Arena<br/>
 
-E-mail: <br/>
-LinkedIn:<br/>
-GitHub: <br/>
-Website:<br/>
-Cell: <br/>
+E-mail: sebastian.darena@gmail.com<br/>
+<a href = 'https://www.linkedin.com/in/sebdarena/'>LinkedIn</a><br/>
+<a href = 'https://github.com/sdarena/'>GitHub</a><br/>
 </p>
+
 
 <p>Jon Weinstein<br/>
 
@@ -33,7 +32,6 @@ E-mail: Jweinst4@gmail.com<br/>
 <a href = 'https://www.linkedin.com/in/jon-weinstein-301665181/'>LinkedIn</a><br/>
 <a href = 'https://jweinst4.github.io/'>Wheel of Fortune App</a><br/>
 <a href = 'https://desolate-fortress-92634.herokuapp.com/'>Digital Closet App</a><br/>
-Cell: 914 715 3894<br/>
 </p>
 
 

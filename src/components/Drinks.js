@@ -81,9 +81,9 @@ class Drinks extends React.Component {
         console.log(localStorage.isLoggedIn)
         return (
             <div className='drinks'>
-                <h1>Drinks</h1>
+
                 {
-                    this.props.isLoggedIn && (this.state.edit ? <UpdateForm drink={this.state.drink} handleEditDrink={this.handleEditDrink} /> : <NewForm handleAddDrink={this.handleAddDrink} />) 
+                    this.props.isLoggedIn && (this.state.edit ? <UpdateForm drink={this.state.drink} handleEditDrink={this.handleEditDrink} /> : <NewForm handleAddDrink={this.handleAddDrink} />)
                 }
                 <div className="row">
 

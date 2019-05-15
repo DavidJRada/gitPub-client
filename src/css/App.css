@@ -20,7 +20,14 @@ body {
 
 .card {
   border: 3px solid black;
+  border-radius: 10px;
 }
+
+.card:hover {
+  transition: all .2s ease-in-out;
+  transform: scale(1.05);
+}
+
 .nav-wrapper {
   display: flex;
   font-size: 30px;
@@ -28,6 +35,10 @@ body {
   color: black;
   border: 0px;
   font-family: "courier"
+}
+
+.card-reveal {
+  font-size: 17px;
 }
 
 .navLinking {
@@ -39,18 +50,17 @@ nav {
   color: black;
 }
 
-.login {
-  display: flex;
-  font-size: 15px;
-  justify-content: space-between;
-  margin: 0px 20px;
+.logo {
+  background-image: url('https://i.imgur.com/fdE9N4n.png');
+  display: inline-block;
 }
 
 form {
   border: 3px solid black;
   text-align: left;
+  color: black;
   background: lightgray;
-  opacity: 0.6;
+  opacity: 0.7;
 }
 
 input {
@@ -61,4 +71,3 @@ label {
   font-size: 30px;
   color: black;
 }
-

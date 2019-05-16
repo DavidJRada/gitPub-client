@@ -14,7 +14,7 @@ class About extends React.Component {
 
                     <p>We are currently working on opening up an actual gitPub in the Stamford area.  Some of our signature cocktails include the APIPA and the Console Lager.  The goal is to open our doors in August, 2019 and have our Grand Opening around Labor Day.</p>
 
-                    <p>David Rada has a bachelors in  </p>
+                    <p>David Rada has a Masters in Social Work, and spent many years in the nonprofit sector and direct practice. His interest in software engineering lies in leveraging web applications to make access to resources more equitable. </p>
                     
                     <p>Sebastian has a bachelors in politial science and was a sous chef for most of his professional career.  He became interested in programming through striving to improve the lives of others via useful apps. </p>
                         

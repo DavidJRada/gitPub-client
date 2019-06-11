@@ -21,7 +21,7 @@ Cell: <br/>
 <p>Sebastian D'Arena<br/>
 
 E-mail: sebastian.darena@gmail.com<br/>
-<a href = 'https://www.linkedin.com/in/sebdarena/'>LinkedIn</a><br/>
+<a href = 'https:// www.linkedin.com/in/sebdarena/'>LinkedIn</a><br/>
 <a href = 'https://github.com/sdarena/'>GitHub</a><br/>
 </p>
 

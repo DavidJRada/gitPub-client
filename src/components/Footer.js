@@ -16,7 +16,7 @@ class Footer extends React.Component {
                         <div className = 'footerText'>
                         <br/>
                         
-                            <h4>Made in Stamford, CT</h4>
+                            <h4>Compiled in Stamford, CT</h4>
                         </div>
                     </div>
                 </div>
